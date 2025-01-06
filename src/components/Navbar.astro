@@ -1,0 +1,62 @@
+---
+const navigate = {
+  "HOME": "#screen-hero",
+  "ABOUT": "#screen-about",
+  "CONTACT": "#screen-contact",
+};
+---
+
+<header>
+  <h1>Kiraso</h1>
+  <nav id="navigation" role="navigation">
+    <ul class="navigation">
+      {
+        Object.entries(navigate).map(([key, value]) => (
+          <li>
+            <a href={value}>{key}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .navigation li {
+    list-style: none;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+  .navigation li a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  .navigation li a:hover {
+    color: var(--secondary-color);
+  }
+</style>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      const main = document.querySelector("main");
+
+      if (targetElement) {
+        main.scrollTo({
+          top: targetElement.offsetTop - main.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+</script>

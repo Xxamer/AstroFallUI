@@ -1,0 +1,56 @@
+---
+
+---
+
+<section id="screen-contact">
+  <div class="parent">
+    <form class="f_form">
+      <div class="grid_inputs">
+        <label for="name">Name:</label>
+        <input
+          class="f_input"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name.."
+        />
+      </div>
+      <div class="grid_inputs">
+        <label for="email">Email:</label>
+        <input
+          class="f_input"
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Your email.."
+        />
+      </div>
+      <div class="grid_inputs">
+        <label for="subject">Subject:</label>
+        <input
+          class="f_input"
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Subject.."
+        />
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll(".f_input").forEach((input) => {
+    input.addEventListener("input", () => {
+      const sounds = [
+        "sound/type.wav",
+        "sound/type2.wav",
+        "sound/type3.wav",
+        "sound/type4.wav",
+      ];
+      const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+      const audio = new Audio(randomSound);
+      audio.play();
+    });
+  });
+</script>

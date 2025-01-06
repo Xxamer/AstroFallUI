@@ -1,0 +1,46 @@
+.parent {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;      /* Asegurarse de que ocupe toda la altura de la pantalla */
+}
+
+.f_form {
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--primary-color);
+    margin: 20px;
+    max-width: 50%;
+}
+
+.f_input {
+    border: none;
+    background-color: transparent;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+    color: var(--primary-color);
+    font-size: 20px;
+}
+.f_input::focus{
+    outline: none;
+    border: none;
+}
+.grid_inputs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid_inputs > label{
+    width: 50%;
+}
+.grid_inputs > input{
+    width: 100%;
+}
+
+.table-data{
+    text-align: center;
+}
