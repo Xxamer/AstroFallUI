@@ -1,5 +1,14 @@
 ---
-
+const columns = [
+  "Strength",
+  "Perception",
+  "Endurance",
+  "Charisma",
+  "Agility",
+  "Intelligence",
+  "Luck",
+];
+const data = [8, 5, 10, 8, 3, 6, -1];
 ---
 
 <section id="screen-hero">
@@ -12,7 +21,7 @@
         alt=""
       />
     </div>
-    <div style="padding-right: 10%;">
+    <div style="padding-right: 5%; justify-content: center;">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -22,23 +31,16 @@
       est laborum
     </div>
   </div>
-  <table>
+
+  <table style=" width: 100%;">
     <thead>
       <tr>
-        <td>Ilusión</td>
-        <td>Conocimiento</td>
-        <td>Fuerza</td>
-        <td>Programación</td>
-        <td>Amor</td>
+        {columns.map((column) => <td>{column}</td>)}
       </tr>
     </thead>
     <tbody>
       <tr class="table-data">
-        <td>5</td>
-        <td>8</td>
-        <td>7</td>
-        <td>27</td>
-        <td>-1</td>
+        {data.map((d) => <td>{d}</td>)}
       </tr>
     </tbody>
   </table>

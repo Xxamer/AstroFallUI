@@ -2,6 +2,12 @@
 
 ---
 
+<script defer>
+  function submitForm(e) {
+    const contactText = document.querySelector('#contact-text').classList;
+    contactText.toggle('d-none');
+  }
+</script>
 <section id="screen-contact">
   <div class="parent">
     <form class="f_form">
@@ -27,16 +33,23 @@
       </div>
       <div class="grid_inputs">
         <label for="subject">Subject:</label>
-        <input
-          class="f_input"
-          type="text"
+        <textarea
+          cols="40"
+          class="f_textarea"
           id="subject"
           name="subject"
           placeholder="Subject.."
         />
       </div>
+      <button class="f-button w-full" type="button" onclick="submitForm()">Submit</button>
     </form>
   </div>
+</div>
+<div id="contact-text" class="d-none">
+  <p>This feature is not implement because it is a demo but i'm glad you liked enough to contact me.
+    You can contact me on <a href="https://www.linkedin.com/in/christiangranadorodriguez">LinkedIn</a>
+    or <a href="https://www.instagram.com/_kiraso/">Instagram</a> 
+  </p>
 </section>
 
 <script>

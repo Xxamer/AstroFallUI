@@ -1,15 +1,17 @@
 ---
+import AboutV from "./vue/about.vue"
 ---
 
 <section id="screen-about">
     <article>
         <header>
-            <h2>SCREEN ABOUT</h2>
+            <h2>About</h2>
         </header>
-        <div class="content">Lorem ipsum...</div>
-        <p class="alert">Test</p>
-        <figure>
-            <img src="url_illustration" alt="alt text for illustration" />
-        </figure>
+        <div class="content">
+            <p>I dit this just for the sake to learn astro</p>
+            <p>I hope you like it</p>
+            <AboutV client:load/>
+        </div>
+      
     </article>
 </section>
